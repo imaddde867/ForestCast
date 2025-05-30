@@ -19,6 +19,19 @@ ForestCast is a comprehensive deforestation prediction system that leverages his
 
 ## 🛠️ System Architecture
 
+### 📊 Data Pipeline
+
+```mermaid
+graph LR
+    A[Historical Satellite Imagery] --> B[Preprocessing]
+    B --> C[Feature Extraction]
+    C --> D[Time Series Analysis]
+    D --> E[Prediction Model]
+    E --> F[Risk Assessment]
+````
+
+### 🔧 Component Flow
+
 1. **Data Ingestion:** Download and manage historical satellite imagery
 2. **Preprocessing:** Normalize and clean raw geospatial data
 3. **Feature Extraction:** Apply computer vision techniques to identify forest cover
@@ -28,9 +41,9 @@ ForestCast is a comprehensive deforestation prediction system that leverages his
 
 ## 🌍 Use Cases
 
-- Environmental research and forest conservation
-- Policy-making and governmental monitoring
-- NGO data analysis and activism support
+* Environmental research and forest conservation
+* Policy-making and governmental monitoring
+* NGO data analysis and activism support
 
 ## 📦 Installation (coming soon)
 
