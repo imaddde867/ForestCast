@@ -1,32 +1,46 @@
+# data_handler.py
+
 from pystac_client import Client
 from planetary_computer import sign
 import stackstac
 import rasterio
 import numpy as np
+import os
 
-def search_imagery(lat, lon, start_date="2018-01-01", end_date="2023-01-01"):
-    catalog = Client.open("https://planetarycomputer.microsoft.com/api/stac/v1")
-    
-    search = catalog.search(
-        collections=["sentinel-2-l2a"],
-        bbox=[lon-0.01, lat-0.01, lon+0.01, lat+0.01],
-        datetime=f"{start_date}/{end_date}",
-        query={"eo:cloud_cover": {"lt": 10}},
-        limit=5
-    )
-    
-    items = list(search.items())
-    items = [sign(item) for item in items]
+def search_imagery(lat, lon, start_date, end_date, collection="sentinel-2-l2a", cloud_thresh=10, limit=5):
+    # ... (your existing code, but parameterized and generalized)
     return items
 
-items = search_imagery(
-    60.46110618265409, 22.288990538429076,
-    start_date="2018-01-01", end_date="2023-01-01"
-)
+def download_stack(items, bands=["B04", "B08", "B11"], patch_size=64):
+    # Download and stack selected bands for the given items
+    # Return as numpy array or xarray
+    pass
 
-for item in items:
-    print(f"ID: {item.id}")
-    print(f"Date: {item.datetime}")
-    print(f"Cloud Cover: {item.properties.get('eo:cloud_cover', 'N/A')}")
-    print(f"Assets: {list(item.assets.keys())}")
-    print("-" * 40)
+def compute_ndvi(red, nir):
+    return (nir - red) / (nir + red + 1e-6)
+
+def compute_evi(red, nir, blue):
+    return 2.5 * (nir - red) / (nir + 6*red - 7.5*blue + 1)
+
+def compute_nbr(nir, swir2):
+    return (nir - swir2) / (nir + swir2 + 1e-6)
+
+def get_environmental_features(lat, lon):
+    # Fetch elevation, rainfall, etc.
+    pass
+
+def prepare_features(lat, lon, start_date, end_date, patch_size=64):
+    # 1. Search imagery
+    # 2. Download and stack bands
+    # 3. Compute indices
+    # 4. Fetch environmental features
+    # 5. Return as dict or array for ML model
+    pass
+
+def cache_data(data, cache_path):
+    # Save processed data to disk
+    pass
+
+def load_cached_data(cache_path):
+    # Load processed data from disk
+    pass
