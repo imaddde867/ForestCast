@@ -302,9 +302,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Author**: [Your Name]
-- **Email**: your.email@example.com
-- **Project Link**: https://github.com/your-username/deforestation-ai
+- **Author**: Imad Eddine
+- **Email**: imadeddine200507@gmail.com
+- **Project Link**: https://github.com/imaddde867/ForestCast
 
 ---
 
