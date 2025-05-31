@@ -45,7 +45,7 @@ This project aims to develop an AI-powered system that analyzes historical satel
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   Data Sources  │───▶│  Data Pipeline   │───▶│  Preprocessing  │
 │                 │    │                  │    │                 │
-│ • Landsat       │    │ • Earth Engine   │    │ • Cloud Masking │
+│ • Landsat       │    │                  │ • Cloud Masking │
 │ • Sentinel-2    │    │ • USGS APIs      │    │ • Normalization │
 │ • Hansen GFC    │    │ • Automated      │    │ • Patch Extract │
 └─────────────────┘    │   Collection     │    └─────────────────┘
