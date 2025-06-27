@@ -27,8 +27,8 @@ An AI-powered web application that predicts deforestation risk by analyzing hist
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/deforestation-ai.git
-   cd deforestation-ai
+   git clone https://github.com/imaddde867/ForestCast
+   cd ForestCast
    ```
 
 2. **Create virtual environment**
